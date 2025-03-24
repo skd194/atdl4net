@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/VS2010-4.0/bin/Debug
+/.vs
+/Atdl4net/obj
+/Atdl4net.ExampleApplication/.vs/Atdl4net.ExampleApplication.VS2010-4.0
+/Atdl4net.ExampleApplication/bin/Debug
+/Atdl4net.ExampleApplication/obj
