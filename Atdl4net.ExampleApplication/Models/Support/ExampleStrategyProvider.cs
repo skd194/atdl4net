@@ -110,7 +110,10 @@ namespace Atdl4net.ExampleApplication.Models.Support
                 XAttribute providerId = (from e in document.Descendants("{http://www.fixprotocol.org/FIXatdl-1-1/Core}Strategy") 
                                          select e).First().Attribute("providerID");
 
-                providers.Add(providerId.Value, resource);
+                if(providerId != null)
+                {
+                    providers.Add(providerId.Value, resource);
+                }
             }
 
             return providers;
