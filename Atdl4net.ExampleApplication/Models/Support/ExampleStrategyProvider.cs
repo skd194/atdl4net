@@ -67,7 +67,7 @@ namespace Atdl4net.ExampleApplication.Models.Support
         /// <returns><see cref="IList{string}"/> of the names of strategies for the specified provider.</returns>
         public IList<string> GetStrategyNamesForProvider(string providerId)
         {
-            return (from p in _atdlStrategyProvider.GetStrategiesByProvider(providerId) 
+            return (from p in _atdlStrategyProvider.GetStrategiesByProvider(providerId)
                     select p.Name).ToList<string>();
         }
 
@@ -107,13 +107,10 @@ namespace Atdl4net.ExampleApplication.Models.Support
                     document = XDocument.Load(reader);
                 }
 
-                XAttribute providerId = (from e in document.Descendants("{http://www.fixprotocol.org/FIXatdl-1-1/Core}Strategy") 
+                XAttribute providerId = (from e in document.Descendants("{http://www.fixprotocol.org/FIXatdl-1-1/Core}Strategy")
                                          select e).First().Attribute("providerID");
 
-                if(providerId != null)
-                {
-                    providers.Add(providerId.Value, resource);
-                }
+                providers.Add(providerId.Value, resource);
             }
 
             return providers;
